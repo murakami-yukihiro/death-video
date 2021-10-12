@@ -3,3 +3,4 @@ public/
 **/node_modules/
 *.config.js
 .*lintrc.js
+config-overrides.js
