@@ -23,6 +23,8 @@ module.exports = {
   },
   plugins: ['react', '@typescript-eslint'],
   rules: {
+    '@typescript-eslint/explicit-function-return-type': 'off',
+    '@typescript-eslint/restrict-template-expressions': 'off',
     'import/extensions': [
       'error',
       {
@@ -32,6 +34,8 @@ module.exports = {
         tsx: 'never',
       },
     ],
+    'import/prefer-default-export': 'off',
+    'import/no-default-export': 'error',
     'react/jsx-filename-extension': [
       'error',
       {
@@ -45,6 +49,8 @@ module.exports = {
         allowAsStatement: true,
       },
     ],
+    'no-use-before-define': ['error', { functions: false }],
+    'no-plusplus': ['error', { allowForLoopAfterthoughts: true }],
   },
   settings: {
     'import/resolver': {

@@ -1,3 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Kaisei+Decol&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-lamp-black;
+  }
+  h1 {
+    @apply text-5xl;
+  }
+}
