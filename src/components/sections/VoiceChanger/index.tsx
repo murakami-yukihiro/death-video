@@ -23,6 +23,7 @@ export const VoiceChanger = () => {
   const selectVoice = useCallback(
     (voice: VoiceState) => {
       setVoiceState(voice);
+      // eslint-disable-next-line no-console
       transform(voiceChanger[voice]).catch((e) => console.log(e));
     },
     [transform, voiceChanger]

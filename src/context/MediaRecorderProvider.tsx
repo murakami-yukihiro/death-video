@@ -84,7 +84,6 @@ const MediaRecorderProvider = ({ children }: { children: ReactNode }) => {
 
   const transform = useCallback(
     async (trans: Transformer) => {
-      console.log('transform', originAudioBuffer, trans);
       if (!originAudioBuffer) return;
       setResult(undefined);
       const transformedBuffer = await trans(originAudioBuffer);
@@ -98,7 +97,6 @@ const MediaRecorderProvider = ({ children }: { children: ReactNode }) => {
    */
   const getWavUrl = useCallback(
     async (ab: AudioBuffer) => {
-      console.log('Call getWavUrl', ab);
       const reader = new FileReader();
       const currentBlob = new Blob(chunks.current || undefined, {
         type: mediaRecorder?.current?.mimeType,

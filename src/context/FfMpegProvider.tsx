@@ -16,15 +16,13 @@ const FfMpegResultUtilsContext = createContext<FfMpegUtils | null>(null);
 
 const FfMpegProvider = ({ children }: { children: ReactNode }) => {
   const [result, setResult] = useState<string>('');
-  const [message, setMessage] = useState('standby to transcode');
-  console.log(message);
+  const [, setMessage] = useState('standby to transcode');
 
   const run = useCallback(async (blob: Blob, card: CardSrc) => {
     const ffmpeg = createFFmpeg({
       log: true,
     });
     const image = await fetchFile(card);
-    console.log('image', image);
     const sound = await fetchFile(blob);
     setMessage('Loading ffmpeg-core.js');
     await ffmpeg.load();
@@ -48,7 +46,6 @@ const FfMpegProvider = ({ children }: { children: ReactNode }) => {
     const url = URL.createObjectURL(
       new Blob([data.buffer], { type: 'video/mp4' })
     );
-    console.log(url);
     setResult(url);
   }, []);
 

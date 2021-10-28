@@ -1,5 +1,4 @@
 export const troll = async (audioBuffer: AudioBuffer) => {
-  console.log('troll', audioBuffer);
   if (!audioBuffer) return;
   const ctx = new OfflineAudioContext(
     audioBuffer.numberOfChannels,

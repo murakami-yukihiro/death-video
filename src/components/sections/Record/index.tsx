@@ -22,6 +22,7 @@ export const Record = () => {
       .catch((e) => {
         // eslint-disable-next-line no-alert
         alert('マイクが使えません。');
+        // eslint-disable-next-line no-console
         console.log(e);
       });
   }, [ask, close, start]);
